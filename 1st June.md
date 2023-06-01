@@ -2,10 +2,12 @@
 - What is inode?
 - what is socket?
 - what is System log?
+- how does block storage works in OS?
 - how to know a file is regular file or not?
+- Why is Linux considered to be secure OS eventhough its source code is OPEN-SOURCE?
 
 ## Linux Commands
-- using 'sh' command then use 'exit' to come out of it
+- use 'sh' command then use 'exit' to come out of it: while you're using 'sh' you can't tell by just looking in which directory you're present; you'll have to use pwd for it. 
 - use 'cd /etc' to see the files inside it
 - use 'cd /dev' and using ls see the files inside it.
 - first character tells about file type example b stands for block type  of file and if its only - then it is regular file; block file is a unique type of file and we don't open it just like a regular file.
