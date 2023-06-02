@@ -51,3 +51,11 @@
 - under the hood 'ls' is a new process who has the parent terminal; use 'pstree' command to check this and you will see all the processes running.
 - processes communicate with each other through signals.
   
+## GRACEFUL TERMINATION
+  - 'kill -l' gives list of all signals allowed with kill command.
+  
+- If users have old version running and new version has been launched then how do users switch to new version? deployment of new version takes place and gracefully old version is terminated.
+- how to close process gracefully?
+  in python we use (kill -9) to end process.
+  - in graceful termination process server is closed for new requests so that it can start with its termination.
+  
