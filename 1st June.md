@@ -2,6 +2,7 @@
 - What is inode?
 - what is socket?
 - what is System log?
+- What are system calls and system calls are made?
 - how does block storage works in OS?
 - how to know a file is regular file or not?
 - Why is Linux considered to be secure OS eventhough its source code is OPEN-SOURCE?
@@ -10,11 +11,23 @@
 - use 'sh' command then use 'exit' to come out of it: while you're using 'sh' you can't tell by just looking in which directory you're present; you'll have to use pwd for it. 
 - use 'cd /etc' to see the files inside it
 - use 'cd /dev' and using ls see the files inside it.
-- first character tells about file type example b stands for block type  of file and if its only - then it is regular file; block file is a unique type of file and we don't open it just like a regular file.
+- first character tells about file type example b stands for block type  of file and if its only - then it is regular file; block file is a unique type of file and we don't open it just like a regular file. Next column indicates the permissions of user and the group to which the user belongs to.
 - 3 important files: 
+- a) stderr
+- b) stdin
+- c) stdout
 - 'l' stands for link files; we have hard and soft links in linux; 
 - every file in linux has owner and group
-- Standard strings is easy way in linux to understand a program and give input and output. example stderr, stdin, stdout.
-- command which explicitly tells if command is successfully executed or not: echo $?    ;here ? contains exit code of previos command. if it gives 0 then successfully executed command otherwise 1.
-- folder /proc contains all the information of processes running in the system.
+- Root user is the owner of all the files in linux by default.
+- Standard strings is an easy way in linux to understand a program and give input and output. example stderr, stdin, stdout.
+- command which explicitly tells if the recently executed command is successfully executed or not: echo $?    ;where ? contains exit code of previos command. if it gives 0 then successfully executed command otherwise 1.
+- Everything in linux is a file or process.
+- folder /proc contains all the information of processes running in the system. Change your directory to 'cd /proc' and execute the command ls to know the process id(PID) of the running processes, system information and the associated resources with eaxh process.
+- Some important directories :-  
+- a) /etc
+- b) /dev
+- c) /home
+- d) /proc
+- Use cd or cd ~ to move to root directory.
+- Concept of absolute and relative path.
 - 
