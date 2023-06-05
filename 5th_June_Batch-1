@@ -92,7 +92,7 @@ LEARNINGS FROM TODAY'S LECTURE-
    - Port is a way to communicate with a process.
    - Combination of IP address and port allows us to communicate over a network.
    - "netcat" command is used to send data to the server. Command = "net cat public_ip_of_the_server port_number". Port number used is 9999.
-   - "netstat" command investigates our current n/w connection.
+   - "netstat" command investigates our current n/w connections.
    - "netstat -tuna" command lists all our currently present sockets. "-tuna" is similar to writing -t -u -n -a.
    - Server has a main socket on which it listens to the requests of the clients. Whenever we connect to a server, a new socket opens upb/w the user and the server.
    - Each connection is a seperate socket file.
