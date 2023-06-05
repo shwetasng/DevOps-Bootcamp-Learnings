@@ -1,5 +1,7 @@
 QUESTIONS-
 - What is socket and how does it helps in communication?
+- What is index in linux?
+- Why do we install packages as sudo user?
 - What are environment variables and what are they used for?
 - How you can verify that whether the installed package is official(real package) or a compromised package?
 - How you can verify that the package installation is successful or not?
@@ -13,3 +15,24 @@ QUESTIONS-
 - What are ports?
 - What is net cat command is used for?
 - What is netstat -tuna command? What is -tuna flag stands for and why is it used?
+
+LEARNINGS FROM TODAY'S LECTURE-
+- Group of virtual machines (called nodes in a network) that interacts with each other forms the cluster. Example - Kubernetes Cluster.
+- Every application interacts/communicates with each other using linux sockets at the lowest level. Sockets allows the most basic communication among the devices.
+- Package manager in linux is used to install packages.
+- apt = Advanced Packaging Tool
+- We can either use apt -get or apt only to work with our package manager.
+- "sudo apt -get update" command is used to update the index in linux i.e. this command don't install anything on the limux system but provides the latest version of the packages.
+- "sudo apt -get install <package-name>" command may even install the old version of the package. Thus, run "sudo -apt get update" everytime before installing a package.
+- Installed packages goes to "archive" directory of our linux system.
+- "/var/lib/apt/lists/" holds the list of all packages present in the archives (this location hods the package name, its meta-data, but not the data of the package as it is very heavy = this all information constitutes the index)
+- /var stores application data like browser data, picture/image data etc.
+
+- When we install git (using "sudo apt -get intall git"), Git creates its own archive for many reasons. It don't uses Ubuntu archive.
+- We use sudo to run the commands related to package management because since on installation of package we update it's index thus making changes to /var/lib/apt/lists, which only root user has permission to make these changes.
+- Other users have read-only permissions for /var/lib/apt/lists, thus they don't play a role in package management.
+- Try to run apt -get without sudo -- it throws an error.
+- "sudo apt -get install <package_name" command used to install a package on our system.
+- "sudo apt -get install docker" -> install the docker on our linux system but it may even install a compromised Docker that looks and works same like official Docker but may steal the user data under the hood. Thus, we need to add Docker's official GPG key which verify the integrity of Docker installation.
+- Docker maintains its own archive file.
+- Environment variable are the system variables present in every processes. In linux, everything is either a file or a process. Terminal is itself a process.
