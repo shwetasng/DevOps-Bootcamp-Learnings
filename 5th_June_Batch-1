@@ -1,0 +1,12 @@
+QUESTIONS-
+- What is socket and how does it helps in communication?
+- What are environment variables and what are they used for?
+- How you can verify that whether the installed package is official(real package) or a compromised package?
+- How you can verify that the package installation is successful or not?
+- What env. variables do you know?
+- How env. variables helps our apllication to store sensitive data?
+- How to create your own linux command?
+- How to remove your own created linux command from the env?
+- How OSI Model is implemented in linux?
+- What are socket files?
+- What is SSH protocol?
