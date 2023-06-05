@@ -17,6 +17,7 @@ QUESTIONS-
 - What are ports?
 - What is net cat command is used for?
 - What is netstat -tuna command? What is -tuna flag stands for and why is it used?
+- How to terminate the remote server?
 
 LEARNINGS FROM TODAY'S LECTURE-
 - Group of virtual machines (called nodes in a network) that interacts with each other forms the cluster. Example - Kubernetes Cluster.
