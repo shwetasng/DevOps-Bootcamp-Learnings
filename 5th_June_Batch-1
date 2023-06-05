@@ -10,3 +10,6 @@ QUESTIONS-
 - How OSI Model is implemented in linux?
 - What are socket files?
 - What is SSH protocol?
+- What are ports?
+- What is net cat command is used for?
+- What is netstat -tuna command? What is -tuna flag stands for and why is it used?
