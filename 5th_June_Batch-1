@@ -7,7 +7,9 @@ QUESTIONS-
 - How you can verify that the package installation is successful or not?
 - What env. variables do you know?
 - How env. variables helps our apllication to store sensitive data?
-- How to create your own linux command?
+- How to verify the unset env variable is not available anymore?
+- How does commands woke?
+- How to create your own linux commands and environment variables?
 - How to remove your own created linux command from the env?
 - How OSI Model is implemented in linux?
 - What are socket files?
@@ -36,3 +38,67 @@ LEARNINGS FROM TODAY'S LECTURE-
 - "sudo apt -get install docker" -> install the docker on our linux system but it may even install a compromised Docker that looks and works same like official Docker but may steal the user data under the hood. Thus, we need to add Docker's official GPG key which verify the integrity of Docker installation.
 - Docker maintains its own archive file.
 - Environment variable are the system variables present in every processes. In linux, everything is either a file or a process. Terminal is itself a process.
+- "echo $HOME" -- environment variable for "home". Purpose of home variable -- gives absolute path to home directory.
+- "printenv" command prints all the environment variable present in the system.
+- ".env file" -- sets all the variables as environment variable. It is not native to Ubuntu system.
+
+- EXAMPLE: 
+            - Let's consider a python application interacting with the database.
+            - It requires a password to access the database and retrive the data from it.
+            - Password is never stored in the code as the code may be publicably available on GitHub.
+            - How environment variable can help in this case to allow our applications to store sensitive data? How env. variable hides our password from the readers?
+            
+ - PATH -> an important env. variable.
+ - /bin directory holds the binary execuatables.
+ - mkdir (and many other linux commands) is a binary executable file.
+ - "which git" command shows where in the system git command is present
+ - "which mkdir" command shows where in the system mkdir command is present. It is present in /bin/mkdir location i.e mkdir command binary executable is present in the /bin directory.
+ - For every command in the bash, there is a binary execuatble file located somewhere in the system that gets executed when the command is executed.
+ - "echo $PATH" command shows the various paths seperated by ":" as a seperator.
+ - When $docker is executed on terminal, under the hood execuatble location is searched from PATH env variable.
+ -  "unset PATH" command deletes the env variable 'PATH'.
+ - We can verify that the unset environment variable exists no longer by executing the command "echo $name_of_unset_env_variable"
+ - Some commands use PATH env. variable to woke but some doesn't.
+ - Environment variables are transferred in form of inheritance. Parent process tranfers its env. variables to its child processes.
+ - Use "export" command to create your own environment variable.
+
+ OSI MODEL
+ - Similar to Airline System where services at each layer trusts the data or services received fro  upper layer (At departure side) andserves the down layers.
+ - Each layer uses the services offered by layers above it (At client side).
+ 
+ LAYERS AVAILABLE
+  1. Application layer - Used to make requests. More closer to the user.
+  2. Transpoert layer - Segments the data. If any of the segment is not transmitted  properly, it is retransmitted by the TCP protocol used at this layer.
+  3. Internet layer - IP protocol present at this layer. It takes 1śegment at a time and sends it over the internet b/w the source and the destination. This layer don't care about the content of each segment or whether it has been retranmitted or not.
+  4. Network Interface layer - Very low level layer. Takes data as bits and converts it to EMI signals or other types of signal for transmission through different media like cables or through satellites.
+  
+  
+  - In linux, OSI Model is implemented using the sockets.
+  - Since everything in linux is a file, communication is also a file.
+  - Create a socket file  to communicate. Designed to send data to receiver (e.g. sending data to google.com)
+  - Writing data to soket file is similar to writing data to regular files. Kernel is responsible to send the data over the internet.
+  - Server also contains socket files to communicate with the clients.
+  - ssh protocol allows us to execute linux commands in remote server.
+  
+  
+  - EXAMPLE:
+            - we use "server.c" from the bootcamp repo to work with the remote server.
+            - on terminal "$ssh ubuntu@public_ip_address_of_remote_server" command. Here 'ubuntu' is the username and 'public_ip' is the hostname.
+            - on execution of the above command, error is thrown because we need credentials to prove that we have access to the server.
+            - on terminal, execute "$ssh -i identity_of_the_user ubuntu@public_ip_of_remote_server".
+            - on terminal, execute "chmod 400 identity_of_the_user". 400 -> wants reader to have only read permissions.
+            - Now we can execute commands on the remote server using our local terminal of the terminal.
+            
+   - Port is a way to communicate with a process.
+   - Combination of IP address and port allows us to communicate over a network.
+   - "netcat" command is used to send data to the server. Command = "net cat public_ip_of_the_server port_number". Port number used is 9999.
+   - "netstat" command investigates our current n/w connection.
+   - "netstat -tuna" command lists all our currently present sockets. "-tuna" is similar to writing -t -u -n -a.
+   - Server has a main socket on which it listens to the requests of the clients. Whenever we connect to a server, a new socket opens upb/w the user and the server.
+   - Each connection is a seperate socket file.
+  
+  
+  
+ 
+ 
+            
