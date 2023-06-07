@@ -1,0 +1,25 @@
+- Socket is the lowest level interface to communicate over the network. Socket is like a regular file from which we can read and write the content to it.
+- In server.c file (present in DevOps bootcamp repo), there are 3 system calls:- 
+   1. socket() -- creates a socket file
+   2. bind() -- makes socket communicable
+   3. listen() -- we start listening through port number.
+   
+  - SUBNETS
+  - Apllications are not deployed on a single server becuase it increses the risk of single point of failure, rather the apllications are deployed in clusters which is set of independent machines reducing the chances of single point of failure.
+  - Example: We experience github.com as a single service but under the hood it is composed of many microservices. This architecture is called miceroservices.
+  - All the microservices runs on close serves so as to reduce the latency i.e. microservicesare made available within the same network. Hence, we need to learn about subnets so as to make all the microservices related to a single service available within a single network.
+  - Read about Route Table, Network Interface and Default gateway.
+  - 3 important protocols: HTTP, DNS, SSH
+  
+  - DNS
+  - Allow to convert the domain name to its corresponding IP address.
+  - Computers dont know what to do with the hostname. They rely on IP address to communicate with each other over the network.
+  - Humans don't learns the IP address as it keeps on changing.
+  - DNS Protocol is a function whose input is the DNS name and output is the corresponding IP address.
+  - Command to resolve DNS name = 'nslookup"
+    Example - "$nslookup google.com"
+  - Idea of using a single DNS server to get the IP address is not a good idea because of the following reasons:
+            - Single point of failure.
+            - Heavy traffic on a single server.
+            - Inefficient resolution of the DNS name
+            
