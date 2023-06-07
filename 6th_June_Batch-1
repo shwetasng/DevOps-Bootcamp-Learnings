@@ -39,7 +39,7 @@
   - "dig command" can be used as an alternate to the "nslookup" command--- Output generted using dig command is more clear.
   
   -Example: Using "dig" command to resolve google.com through the hierarchy of available servers.
-                          
+               - "$dig . NS " command to list down all the roo level servers. This command is used to resolve the root level server of google.com 
                                   
                           
                               
