@@ -1,4 +1,4 @@
-QUESTIONS-
+# QUESTIONS-
 - What is socket and how does it helps in communication?
 - What is index in linux?
 - Why do we install packages as sudo user?
@@ -19,7 +19,7 @@ QUESTIONS-
 - What is netstat -tuna command? What is -tuna flag stands for and why is it used?
 - How to terminate the remote server?
 
-LEARNINGS FROM TODAY'S LECTURE-
+# LEARNINGS FROM TODAY'S LECTURE-
 - Group of virtual machines (called nodes in a network) that interacts with each other forms the cluster. Example - Kubernetes Cluster.
 - Every application interacts/communicates with each other using linux sockets at the lowest level. Sockets allows the most basic communication among the devices.
 - Package manager in linux is used to install packages.
@@ -63,11 +63,11 @@ LEARNINGS FROM TODAY'S LECTURE-
  - Environment variables are transferred in form of inheritance. Parent process tranfers its env. variables to its child processes.
  - Use "export" command to create your own environment variable.
 
- OSI MODEL
+### OSI MODEL
  - Similar to Airline System where services at each layer trusts the data or services received fro  upper layer (At departure side) andserves the down layers.
  - Each layer uses the services offered by layers above it (At client side).
  
- LAYERS AVAILABLE
+### LAYERS AVAILABLE
   1. Application layer - Used to make requests. More closer to the user.
   2. Transpoert layer - Segments the data. If any of the segment is not transmitted  properly, it is retransmitted by the TCP protocol used at this layer.
   3. Internet layer - IP protocol present at this layer. It takes 1śegment at a time and sends it over the internet b/w the source and the destination. This layer don't care about the content of each segment or whether it has been retranmitted or not.
