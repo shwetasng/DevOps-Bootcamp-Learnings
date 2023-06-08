@@ -1,5 +1,5 @@
 ### Resources to read from:
-- chat.openai.com/share/9e72b145-2394-404e-a3a2-e9b5ec6a262a
+- [chat.openai.com/share/9e72b145-2394-404e-a3a2-e9b5ec6a262a](chat.openai.com/share/9e72b145-2394-404e-a3a2-e9b5ec6a262a)
 - https://www.varonis.com/blog/netcat-commands
 ### In class:
 - read bash and other shells. md from tutorials.
