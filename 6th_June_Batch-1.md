@@ -1,6 +1,6 @@
 ## QUESTIONS
 - How we can maintain the HTTP Backend?
-- Why do we need a virtual environment if we can run code locally on our machine?
+- Why do we need a virtual environment if we can run the code locally on our machine?
 
 ## PRACTICAL
 - Using app.py from the bootcamp repo, create a virtual environment and install the flask package.
