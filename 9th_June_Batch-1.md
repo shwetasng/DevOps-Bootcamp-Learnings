@@ -4,7 +4,7 @@
 - Anyone can create image AMI(Amazon Machine Image) upload it on AWS for people to use.
 - AMI is different from Docker image. Docker Images are very light and AMI are heavy.
 - Instance type basically tells about the generation of the hardware being used. Read more about it on https://aws.amazon.com/ec2/instance-types/
-- Note: If a t type instance is running but is idle i.e., CPU is not being used, you earn some credits from AWS. And if in future you require more than 1 CPU, AWS uses these credits for providing those CPU..that is you don't have to pay for those extra CPU's.
+- <ins>Note:</ins> If a t type instance is running but is idle i.e., CPU is not being used, you earn some credits from AWS. And if in future you require more than 1 CPU, AWS uses these credits for providing those CPU..that is you don't have to pay for those extra CPU's.
 - Every EC2 instance is a part of a network; Since AWS don't want to bother you with Networking issue, VPC is created by AWS automatically; basically there are default VPC in every region though this is unsecure since open to internet but very convenient.
 - For project we are supposed to do, we are required to create our own VPC.
 - we don't want EC2 instance to have public IP since it is very risky.
@@ -12,6 +12,26 @@
 - <ins>User Data:</ins> in this we are supposed to write bash script; but recommended not to use; this is for beginner level. this script is not versioned like github, not reviewed hence not convenient.
 
 ## About S3
+- This is an object storage service. Different from block storage service.
+- It is like google drive; just like google drive you will see directories in S3 but under the hood there is no such concept of Directories in this.
+- Here we have buckets and everything is stored in it with flat namespace.
+- There is no meaning of file type here, everything is an object.
+- Everything you store in AWS region it is replicated atleast 3 times i.e., in 3 availability zones.
+- Functions of Object storage:
+  - objects are uploaded using http hence comparatively slower.
+  - chances to loose data is low
+  - There is no limit to store data.
+  - Highly available service; every day service is not available only for 8 seconds.
+- when you store data in S3, you can't edit the data. to modify it: read-> edit-> modify-> overwrite.
+- In S3 there is no search function; we can only list by help of prefix.
+- ACL disabled means no other owner of object and it is advised to keep it disabled otherwise needed. 
+- if 2 services of AWS wants to communicate with each other, it is done easily using role.
+- we can install AWS CLI inside the instance using ' sudo apt install awscli '
+- bucket name is unique across AWS.
+- to read a file in S3, you will have to download it and read it like a regular file.
+- <ins>Imp:</ins> What if by mistake some developer overwrite an object in S3 since in S3 objects with same name are overwritten? To solve this we enable bucket versioning, so instead of overwriting we can see different versions of the objects.
+- Storage Classes:
+  - S3 Standard IA is a storage which is infrequently accessed so for this you pay less to store data but pay more to access data.
 
 ## SS from today's session:
 ![image](https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/422b1def-8c9d-4a69-b4ee-126282263fdc)
@@ -32,5 +52,24 @@
 ![image](https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/e6186bb8-24f9-4c2b-98a1-a4d7fafab626)
 ![image](https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/b71e1211-b3e0-4199-a9bd-414e61eda05d)
 ![image](https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/2192aa09-b1d6-460f-8ce6-bf26fb1e87ee)
+<img width="530" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/7c29458b-0614-40d0-9456-0a321d199b6e">
+<img width="530" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/aa3a64c2-888d-417e-81e3-79fd8b5c121d">
+<img width="528" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/52e99efc-7c12-4780-b184-ab138b2e0537">
+<img width="533" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/c23dd958-5835-4382-bbb9-dd688fe56b6a">
+<img width="524" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/5ff549c0-0952-4049-9de5-f11f95e85795">
+<img width="523" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/aedc1845-24dd-465d-ab1b-f98d7e43a6ed">
+<img width="526" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/95d8240d-ee00-4b8c-9822-f63bac2f9396">
+<img width="527" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/5fe2934a-b6fd-42d8-bcf1-72a9f324c5f9">
+<img width="527" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/718aaa61-f34a-4f6f-86b9-3657f913317c">
+<img width="529" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/8941129e-f420-49f3-b8a4-77daf081c6a4">
+<img width="529" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/123a6ab4-f775-4251-837e-08122f6f5453">
+<img width="527" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/fb2b1abd-46b0-4ac0-a00f-e0bd4b514d05">
+<img width="527" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/48f70315-b682-4086-ac2b-290e51e10831">
+<img width="530" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/43cf552d-0aee-4971-931f-cc1836f97891">
+<img width="529" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/20d2129c-fc85-4fe9-adb3-7910cec688b6">
+<img width="523" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/eda8f8f1-3c6b-4501-98d9-820422cd4da7">
+<img width="529" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/92ac64e4-a5cf-4d75-977f-9f4da2984398">
+
+
 
 
