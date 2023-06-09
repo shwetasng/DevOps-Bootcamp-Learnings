@@ -10,6 +10,7 @@
 - CRYPTOGRAPHY :- Mathematics fiels to encrypt & decrypt the data.
 - CIPHER :- short-name for encryption algorithm.
 - "CEASER CIPHER" -- very basic encryption algorithm, easy to decrypt. Follows "shift by 3" rule.
+
 - ### Symmetric Key Encryption:-
 - Encrypting and decrypting the message the message using the same key.
 - Encrypted message between the sender and receiver is the randomly arranged bits having no meaning in particular.
@@ -30,4 +31,9 @@
 - "EVE" can get inside that when the same message is floated(though in encrypted form) across the channel, some event is going to take place. Thus, we use -salt which is an added protection protection layer to the message floating through the channel.
 
 - TO DECRYPT:- 
-- 
+- "openssl enc -d -aes-
+  -cbc -salt -in encrypte_message.txt -out original_message.txt -pass file:.secretKey" command
+- In above example we have same key to encrypt and decrypt the meassage, thus illustrated symmetric encryption.
+
+- PROBLEM WITH SYMMETRIC KEY ENCRYPTION :- 
+  - Sender and receiver have to meet physically to exchange the key in order to maintain the security. It's not feasible to get symmetric key encryption and it's not enough to meet just once because the key should be rotated, hence need to meet whenever the key is rotated. Other ways than meeting physically to transfer the key are insecure. 
