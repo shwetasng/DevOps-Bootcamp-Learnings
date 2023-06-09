@@ -5,9 +5,12 @@
 - What happens if EVE changes the message in symmetric encrption? Would receiver be able to decrypt the original message?
 - Is asymmetric key encryption enough to communicate securely over the channel?
 - What is TLS Handshake?
--
+- Which python library helps you to communicate with AWS? 
+  - Answer: Boto3
+- Where does AWS stores the public key inside the machine?
+
 ## Practical:-
-- Launch an EC2 instance and connect your instance to your local machine.
+- Launch an EC2 instance and connect your instance to your local machine using SSH.
 
 ## Learnings :-
 - Consider 'BOB' and 'ALICE' as two person who communicates with each each other using an insecure channel that can be manipulated and tracked by 'EVE'.
@@ -95,4 +98,34 @@ TO DECRYPT:-
 - User is responsible for security in the cloud.
  
 ### Compliance in AWS
+- Regulations (like don't store user info in non-encrypted format)
+- EXAMPLE:-
+  - ISO 9001
+  - GDPR (have user privacy  compliance reulations) 
+  - HIPAA (have Medical regulations)
+  - FedRAMP ( have Very strict regulations about confidential government data)
 
+- On premises, we are ourselve responsible to maintain the server. We manage everything.
+
+### Service Models In Cloud
+1. Infrastructre as a service (IaaS)
+- EXAMPLE: Virtual Machine as a service.
+- AWS is responsible for virtualization,servers,storage and networking.
+- User is responsible to install the OS Image.
+2. Platform as a service (PaaS)
+- EXAMPLE: User don't want to work with application, servers, networking etc and just wants to run the spllicstion wherever AWS wants to run it.
+3. Software as a service (SaaS)
+- AWS is responsible to manage everything. User directly uses the apllication deployed on the cloud.
+- EXAMPLE: gmail services.
+
+### Accessing the cloud platform:- 
+- Ways to access the cloud platform:
+  - AWS Management Console (Simple UI)
+  - AWS CLI
+  - SDKs (Software Development Kits)
+
+- AWS doesn't stores our private key because of regulations. Once we download it to our local machine, AWS forgets about it permanently.
+- Private IP is used for communication within the AWS whereas Public IP is used for communication outside to AWS.
+- RESERVED INSTANCES in AWS = Agreement made to use AWS EC2 instances for 1-3 years to get the discount.
+- SPOT INSTANCES in AWS = User offers an amount to AWS to pay for instance. If the offer is accepted we can use the instance but if some other new user makes much better offer to AWS, instances from the previous user would be taken back (Revoking the AWS VM back).
+- Companies uses AI Models to compute the price they should offer to use the instance to get discount upto 90%.
