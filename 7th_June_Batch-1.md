@@ -3,6 +3,8 @@
 - What are compliance regulations?
 - What is symmetric and asymmetric encryption? What are different symmetric and asymmetric encryption algorithms?
 - What happens if EVE changes the message in symmetric encrption? Would receiver be able to decrypt the original message?
+- Is asymmetric key encryption enough to communicate securely over the channel?
+- What is TLS Handshake?
 
 ## Learnings :-
 - Consider 'BOB' and 'ALICE' as two person who communicates with each each other using an insecure channel that can be manipulated and tracked by 'EVE'.
@@ -37,3 +39,29 @@
 
 - PROBLEM WITH SYMMETRIC KEY ENCRYPTION :- 
   - Sender and receiver have to meet physically to exchange the key in order to maintain the security. It's not feasible to get symmetric key encryption and it's not enough to meet just once because the key should be rotated, hence need to meet whenever the key is rotated. Other ways than meeting physically to transfer the key are insecure. 
+  
+ - ### Asymmetric Key Encryption
+  - rsa asymmetric encryption algorithm
+  - EXAMPLE:-
+    - Consider "BOB" as sender and "ALICE" as receiver.
+      - ALICE generates 2 keys, Public Key and Private Key. He shares his public key with BOB. (Public key be shared to anyone, it's pubicly available).
+      - BOB obtains ALICE public key and uses it to encrypt the message to be send over the network.
+      - ALICE uses his private key to decrypt the message.
+  - In asymmetric key encryption, key used for encrypting & decrypting the message is different.
+  - What EVE can do to break the system in this case?
+    -  Once ALICE sends his public key to BOB, EVE can see the ALICE's public key. EVE doesn't alows ALICE public key to reach BOB. EVE sends his own public key to BOB. BOB believes that the keyhas been sent by ALICE but don't know the key belongs to EVE. Thus, the reliable and secure communication is lost between the BOB and ALICE. BOB encrypts the message with EVE's public key. EVE can then decrypt the message with his private key. EVE moodifies the encrypted message recived from BOB. Since, EVE possesses the ALICE public key, he encrypts the modified message and sends it to ALICE. ALICE receives the message and assumes the message to be received from BOB.
+    -  Thus, EVE successfully modified BOB and ALICE message.
+- Thus, certificate authority to which both, BOB nad ALICE trusts provides secure communication between them. 
+- If ALICE encrypts the message using his Private key(not available to anyone) and BOB decrypts the message using the public key (anyone can derypt the message using public key), then the communication can be made secure.
+
+- ### DIGITAL SIGNATURE
+- Way to sign the documents digitally (used to prove the authenticity).
+- EXAMPLE:-
+  - Customer buys a product from Amazon e-commerce platform. Customer visits the tax office to refund the tax. Tax officer asks the customer to prove the authenticity of the receipt that customers carried with him.
+  - Customer asks the Amazon to provide a way to prove the authenticity of the receipt. Amazon takes the receipt, digitally signs it and sends the receipt as plain text as well as encrypted to the tax department.
+  - Tax officer takes the public key of Amazon and decrypts it and if the decrypted format is same as plain text send by Amazon. the receipt is proved authentative.
+ 
+- ### DIGITAL CERTIFICATE
+- It is a public key signe by someone-else(certificate authority) that both sender and receiver trusts to.
+- It's a combination pf digital signature + Asymmetric key encryption + Symmetric key encryption.
+- EXAMPLE:- Certificate Authority takes ALICE public key and signs it using their own Private Key.
