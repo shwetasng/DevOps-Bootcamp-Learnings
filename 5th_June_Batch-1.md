@@ -19,6 +19,9 @@
 - What is netstat -tuna command? What is -tuna flag stands for and why is it used?
 - How to terminate the remote server?
 
+# Practical:-
+- Install docker on your machine.
+
 # LEARNINGS FROM TODAY'S LECTURE-
 - Group of virtual machines (called nodes in a network) that interacts with each other forms the cluster. Example - Kubernetes Cluster.
 - Every application interacts/communicates with each other using linux sockets at the lowest level. Sockets allows the most basic communication among the devices.
