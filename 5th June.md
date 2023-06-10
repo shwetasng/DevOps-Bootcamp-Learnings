@@ -16,4 +16,7 @@
 ![image](https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/4a3b8d1a-0051-45de-81db-2e9674da4fb9)
 
 
+## Discussions from Batch-1
+
+
 
