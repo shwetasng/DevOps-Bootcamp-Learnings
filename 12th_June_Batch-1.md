@@ -40,3 +40,10 @@
 - We use Ubuntu image as a base image to create other images.
 - Container has its own filesystem (it doesn't share the filesystem of the host machine). Thus, we need to fake a terminal for container to interact with its filesystem (get the feeling of connecting to a VM and using its CLI).
  
+ ## SS from today's class
+ <img width="524" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/b5714963-ad65-4ce6-abe5-f801b2ddab6c">
+ <img width="523" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/f80f9a35-9a9f-44e0-beb6-932171de5cae">
+<img width="535" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/40a991db-1e36-456f-8fcd-83d0fce275b6">
+<img width="529" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/cc8ba524-5463-40ce-a354-7961f5f0706c">
+
+
