@@ -44,10 +44,39 @@
 - S3 is SaaS. We are provided with the software, we don't need to deal with code, network infrastrcture or whwre the data is going or stored.
 - we can install AWS CLI inside the instance using ' sudo apt install awscli '
 - bucket name is unique across AWS.
-- to read a file in S3, you will have to download it and read it like a regular file.
-- <ins>Imp:</ins> What if by mistake some developer overwrite an object in S3 since in S3 objects with same name are overwritten? To solve this we enable bucket versioning, so instead of overwriting we can see different versions of the objects.
+- to read a file in S3, you will have to download it because S3 is not a filesystem(no idea of opening & reading a file) and read it like a regular file.
+- In S3 we can just upload and download a file.
+- <ins>Imp:</ins> What if by mistake some developer overwrite an object in S3 since in S3 objects with same name are overwritten? To solve this we enable bucket versioning (having versions of the object), so instead of overwriting we can see different versions of the objects. i.e. if we upload the file with the same object name that already exists, the older objects gets override. Solution to this problem is Bucket Versioning (at any point of time, we never loose the data).
+- Enable bucket versioning for sensitive data.
+- In AWS, to enable and view the version of the object follow the steps below:-
+  - To enable bucket versioning : PROPERTIES -> BUCKET VERSIONING
+  - To view the version : OBJECTS -> SHOW VERSIONS
+- New object is the current version.
+- Problem with Bucket Versioning :- 
+  - Difficulty to identify the versions (all versions have the same name).
+  - Pay more for maintaining even those object versions that are rarely used (we generally uses current version). We pay for extra space hold by unneccsary objects.
+- Solution to problems associated with the bucket versioning :- LIFECYCLE RULE (delete previous old versions after a certain amount of time).   
+- EC2 & S3 are different services. EC2 has nothing to do with S3. EC2 cannot directly access the content of S3 bucket.
+- There are 2 ways EC2 instance access the S3 BUCKET:-
+  1. Using access key (are kept secretly and we need to rotate them)
+  2. By creating role(s).
+- Maximum limit of object that can be uploaded = 5TB.
+- E Tag = Hash value corresponding to the object.
+- We upload object-by-object (i.e file-by-file) to S3, not entire folder at once.
 - Storage Classes:
-  - S3 Standard IA is a storage which is infrequently accessed so for this you pay less to store data but pay more to access data.
+  - S3 Standard : Default storage class.
+  - S3 Standard IA : storage which is infrequently accessed so for this you pay less to store data but pay more to access data (reasonable). Example: Backup of university lecture classes videos of last year (infrequently accessed).
+  - S3 Glacier : used to store the data that you probably will never use. Very low cost storage class. We need to generate the AWS ticket(expensive) to access the data from this storage class.
+  - S3 Intelligent tier : automatically decides the storage class.
+  
+  
+## Access Control List (ACL)
+- Deprecated object ownership method.
+- AWS provides with much better way for object ownership today.
+- Keep ACL disabled in AWS.
+- Who owns the object? Owner of the account or the entity who uploads the object? (Remember - End User is never the owner of the object).
+- EXAMPLE :- You have 2 accounts. Data is uploaded from one account to another account. Then who owns the object? Using IAM, we can make any account, the owner of the object.
+- Using IAM we create roles that can be used to communicate between different AWS services so that we don't need to pass our credentials when wanting 2 or more AWS services to communicate with each other.
 
 ## SS from today's session:
 ![image](https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/422b1def-8c9d-4a69-b4ee-126282263fdc)
