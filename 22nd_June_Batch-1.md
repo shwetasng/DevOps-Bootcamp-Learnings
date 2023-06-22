@@ -1,4 +1,4 @@
-##QUESTIONS:-
+## QUESTIONS:-
 - What happens during rolling out an update?
 - How k8s kills the pods?
 - How does the organizations achieved zero downtime before the introduction of Kubernetes?
@@ -18,4 +18,9 @@
 - This is how k8s kills the pod:-
   - Pods are containers and under the hood containers are the processes. So containers(i.e. pods) can be killed the same way we kill the processes i.e. by using the SIGNALS. k8s sends the SIGTERM to the pod before killing it.
   - For pod to gracefully terminate and don't fail the user request, we want it to receive SIGTERM such that it fails in Readiness Probe. Once the pod receives the SIGTERM, it fails the readiness probe indicating to the k8s that I am going to be killed soon and unavailable to receive new requets. Thus, stop routing new requests to me.
-  - In this way, even without loosing a single user request, zero downtime is achived using the readiness probe. 
+  - In this way, even without loosing a single user request, zero downtime is achived using the readiness probe.
+
+### Screenshots frm today's class:-
+
+![22-6-23a](https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/110754474/9a025c44-7cd8-4607-a022-f9688f947436)
+
