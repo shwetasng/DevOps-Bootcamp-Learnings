@@ -22,19 +22,33 @@
 
 **POD:-**
 - A pod is the atomic unit of deployment in Kubernetes. It is a logical abstraction that represents a group of tightly coupled containers that are scheduled together on the same node and share the same execution context.
+- Each POD has its own POD ID.
 - A pod can consist of one or more containers that are co-located and share the same resources and network namespace. Most of the time 1 container is placed in 1 pod. Containers within a pod can communicate with each other using localhost, and they can also share files and storage volumes.
 
 **SERVICE:-**
+- Service is the abstraction of k8s that allows to access the pods.
+- Service has selectors in it that route traffic to relevant opds. Sevice is a load balancer itself.
+- It has a service discovery ability that discover if there is any new pod with the relevant tag or label & route the traffic to that pod.
+- For debugging purpose, we make the service available locally.
 - A service is an abstraction that provides network connectivity and load balancing for a set of pods. It acts as a stable endpoint for clients to access the pods that are running an application or providing a specific service within the cluster.
 - A service assigns a stable virtual IP address (ClusterIP) to a set of pods. This virtual IP remains constant even if the underlying pods are created, terminated, or scaled. Clients can use this IP address to access the pods providing the service.
 - Services automatically distribute client requests across the pods associated with the service. This load balancing functionality ensures that traffic is evenly distributed and eliminates the need for clients to directly manage the individual pod instances.
 - Services provide a DNS name that can be used to discover and access the pods. Clients can access the service using the service name, and Kubernetes takes care of routing the requests to the appropriate pods.
 
 **DEPLOYMENT:-**
+- Deployment is a set of relicated same pods. Most of the time these pods are stateless which means it doesn't matter which pods handles whhich request. Each pod in stateless state knows the data that other pod(s) knows and they all perform the same task.
+- If deployment is the set of identical images, Replica Set is the set of same image(s) of the same version.
+- Each time we introduce a new version, a new Replica Set gets created. Updating version is followed by 0 downtime.
 - Deployments use Replica Sets as the underlying mechanism to manage and maintain the desired number of pod replicas. A Replica Set ensures that a specified number of identical pods are always running by creating or scaling the replicas based on the defined configuration.
 - Deployments declare the desired state of the pods, including the number of replicas, container images, resource requirements, environment variables, and other configuration parameters. Kubernetes continuously monitors the actual state of the deployment and automatically takes actions to match the desired state.
 - Deployments facilitate rolling updates by managing the deployment of new versions of the application. When a new version of the deployment is specified, Kubernetes gradually updates the pods to the new version while ensuring that the desired number of replicas is maintained. This allows for zero-downtime updates and rollbacks if necessary.
 - Deployments support scaling the number of replicas up or down based on the workload demands.
 - Deployments can define health checks to monitor the readiness and liveness of pods. Health checks can be configured to ensure that only healthy pods receive traffic and that any pods that become unresponsive or unhealthy are automatically restarted or replaced.
-- 
 
+**ROLLING UPDATE :** creating new pods in new replica set slowly(used to upgrade the application seamlessly with zero downtime).
+- We don't mind on which node the pod is running on, it's k8s responsibility to handle the allocation of pod(s) to the node.
+- EXAMPLE - we deployed 2 nginx containers in the cluster and we need to route the traffic between these 2 containers using the load balancer.
+- In k8s, everything(all the deployments, replica sets, pods etc.) is internal by default. We cannot access them from outside the cluster.
+
+- **NOTE :** We can append different yaml code within the same file using '---' seperator.
+- Deployment object has property of self-healing. If any of the pods amomg mentioned number of pods fails, k8s creates a pod immediately same as the failed pod or if any of the instance on whoch the pod was running gets failed, k8s self-healing property regenerates the new instance.
