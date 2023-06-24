@@ -50,5 +50,13 @@
 - **NODE GROUP** is the group of instances(nodes) of same type. Cluster is composed of different groups of nodes.
 - Chatgpt is trained on kubernetes cluster.
 - k8s is just an orchestration tool. Under the hood, it's all docker containers running inside the EC2 instances(or any other node).
-- We provide k8s cluster containers, k8s decides where to run the containers
+- We provide k8s cluster containers, k8s decides where to run the containers.
+- Suppose you have a docker conatiner that wants to communicate with the S3 service. By default this container has no permissions to communicate with the other aws service(s). This docker container needs to be authenticated. Idea of role can help us in this.
+- Node IAM is the role we assign to every node in the node group. Sice the container is running inside the instance, we take this role, put it on EC2. EC2 assumes the role as a mask and can now enable the conatiner in it to access the S3 service.
+- EC2 instances (worker) reside inside the cluster. We create a role that every node in the node-group is assigned to.
+- Every node in the EKS cluster must have the default permissions. One of these permissions is "AmazonEC2containerRegistryReadOnly" that allows EC2 to read containers from ECR i.e. enables to pull images from the registry.
+- Kubernetes is a declarative platform i.e. it allows us to declare what we want (in yaml files) amd k8s will do its best to fulfill our needs.
+  
+- 
+-  
 - 
