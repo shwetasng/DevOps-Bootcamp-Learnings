@@ -56,7 +56,4 @@
 - EC2 instances (worker) reside inside the cluster. We create a role that every node in the node-group is assigned to.
 - Every node in the EKS cluster must have the default permissions. One of these permissions is "AmazonEC2containerRegistryReadOnly" that allows EC2 to read containers from ECR i.e. enables to pull images from the registry.
 - Kubernetes is a declarative platform i.e. it allows us to declare what we want (in yaml files) amd k8s will do its best to fulfill our needs.
-  
-- 
--  
-- 
+
