@@ -13,7 +13,7 @@
 - **"kubectl get pods"** command displays the pods in default namespace but once the default namespcae is set to your own namespace, this command displays the pods in your respective namespace.
 - **"kubectl create ns <your-alias-name>"** command is executed to create your namespcae within the cluster.
 - **"kubectl get pods -n <your_ns_alias>"** command is used to list the pods in your respective namespace.
-- **"kubectl config set-contex --current --namespace=<your_ns_alias>"** command to set the default namespace to your own namespace. It allows to work as default namespace with your own namespace.
+- **"kubectl config set-contex --current --namespace=<your_ns_alias>"** command to set the default namespace to your own namespace. It allows to work as default namespace with your own namespace. Any command you execute after executing this command gets executed in your own namespace.
 
 - **NAMESPACE :** namespace is a virtual grouping mechanism used to organize and isolate resources within a Kubernetes cluster. Namespaces provide a way to partition a cluster into multiple virtual clusters, allowing different teams or applications to have their own logical space to work in. Namespaces serve as a scope for these resources, ensuring that objects are unique within a given namespace.
 
@@ -52,3 +52,9 @@
 
 - **NOTE :** We can append different yaml code within the same file using '---' seperator.
 - Deployment object has property of self-healing. If any of the pods amomg mentioned number of pods fails, k8s creates a pod immediately same as the failed pod or if any of the instance on whoch the pod was running gets failed, k8s self-healing property regenerates the new instance.
+- To access the pods within the cluster,, we can use **"curl http://mynginx:8080"**, where 8080 is the service port.
+- **PORT FORWARDING** is used to access the applicatiobs in the cluster using your local machine. This way we can communicate with pods within the cluster from our local system i.e. exposing the application locally.
+- Port forwarding is used to establish a connection from a local machine to a specific pod within the cluster, allowing direct access to the pod's port. It creates a tunnel between the local machine and the selected pod, but it is limited to communication between the local machine and that specific pod.
+- Port forwarding remains active as long as the kubectl command is running. If you terminate the command, the port forwarding is also terminated.
+- Port forwarding is a convenient way to access services running within the cluster without exposing them publicly or configuring complex networking setups. However, it should be used for development, debugging, or troubleshooting purposes and not as a production-level solution.
+  - EXAMPLE :- **"kubectl port-forward service/mynginx 9000:8080"** command involves 2 port mappings. One from local machine(9000) to service(8080) amd another from service(8080) to the container(80). Nginx web-server forwards the request on port 80.
