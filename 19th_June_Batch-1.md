@@ -1,7 +1,9 @@
 ## KUBERNETES
 ### Questions:-
 - How does we want master to communicate with the worker(s)?
-- How we can protect the k8scluster on the cloud? 
+- How we can protect the k8scluster on the cloud?
+- How can we communicate with the cluster from our local machine?
+- What is the difference between the pods containing the single container and the container itself?
 
 ### Learnings from the classroom:-
 - 3 types of CI-CD Pipeline:-
@@ -36,5 +38,17 @@
 - How does we want master to communicate with the worker(s)?
   - ANSWER : We want master to communicate privately with the worker within the VPC.
 - **NOTE**: In our shared cluster for the Bootcamp, we'll use the public access architecture.
-- 
+- We can protect the cluster inside the cloud by restricting the communication b/w the master and the worker(s). Allow communication only through BASTION SERVER.
+- **CLOUDWATCH** is the observability service of cloud. It's the monitoring tool for AWS. All the application logs and metrices are stored here.
+- Amazon EKS add-ons inter-relates to the internal architecture of K8s. Some of theese are mandatory(default) to operate in the cluster. Remember that version of the add-ons must be corresponding to the version of the kubernetes.
+- kubectl can be used to communicate & control the cluster.
+- **POD** is the set of 1 or more container. It's the smallest deployable unit in the cluster. 
+- **OpenLens** is an open sorce tool that helps in visualisation of the cluster.It helps to know what happening inside the cluster. If our kubectl works good, openlens also works good.
+- **"kubectl get pods"** command is used to list the pods running inthe cluster.
+- **"kubectl get nodes"** command is used to list the nodes in the cluster.
+- We have master in the cluster but needs to add the workers(nodes).
+- **NODE GROUP** is the group of instances(nodes) of same type. Cluster is composed of different groups of nodes.
+- Chatgpt is trained on kubernetes cluster.
+- k8s is just an orchestration tool. Under the hood, it's all docker containers running inside the EC2 instances(or any other node).
+- We provide k8s cluster containers, k8s decides where to run the containers
 - 
