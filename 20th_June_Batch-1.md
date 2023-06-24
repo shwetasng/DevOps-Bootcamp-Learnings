@@ -53,7 +53,8 @@
 - **NOTE :** We can append different yaml code within the same file using '---' seperator.
 - Deployment object has property of self-healing. If any of the pods amomg mentioned number of pods fails, k8s creates a pod immediately same as the failed pod or if any of the instance on whoch the pod was running gets failed, k8s self-healing property regenerates the new instance.
 - To access the pods within the cluster,, we can use **"curl http://mynginx:8080"**, where 8080 is the service port.
-**PORT FORWARDING** is used to access the applicatiobs in the cluster using your local machine. This way we can communicate with pods within the cluster from our local system i.e. exposing the application locally.
+**PORT FORWARDING**
+- It is used to access the applications in the cluster using your local machine. This way we can communicate with pods within the cluster from our local system i.e. exposing the application locally.
 - Port forwarding is used to establish a connection from a local machine to a specific pod within the cluster, allowing direct access to the pod's port. It creates a tunnel between the local machine and the selected pod, but it is limited to communication between the local machine and that specific pod.
 - Port forwarding remains active as long as the kubectl command is running. If you terminate the command, the port forwarding is also terminated.
 - Port forwarding is a convenient way to access services running within the cluster without exposing them publicly or configuring complex networking setups. However, it should be used for development, debugging, or troubleshooting purposes and not as a production-level solution.
