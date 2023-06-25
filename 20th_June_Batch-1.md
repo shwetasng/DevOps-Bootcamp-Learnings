@@ -44,6 +44,12 @@
 - Deployments facilitate rolling updates by managing the deployment of new versions of the application. When a new version of the deployment is specified, Kubernetes gradually updates the pods to the new version while ensuring that the desired number of replicas is maintained. This allows for zero-downtime updates and rollbacks if necessary.
 - Deployments support scaling the number of replicas up or down based on the workload demands.
 - Deployments can define health checks to monitor the readiness and liveness of pods. Health checks can be configured to ensure that only healthy pods receive traffic and that any pods that become unresponsive or unhealthy are automatically restarted or replaced.
+- Every time any vhanges are made to the deployment(changing the version or updationg the number of pods), we again need to execute the cammand "kubectl apply -f name_of_file.yaml" to apply the latest changes.
+- **"kubectl apply -f location_of_deplo_file.yaml"** cammand creates a deployment based on YAML file provided.
+- **"kubectl describe deployment name_of_deployment"** command is used to display the information about the deployment.
+- **"kubectl get pods -l app=nginx"** command is used to display the pods running in the deployment whose label=nginx.
+- **:kubectl describe pod <pod-name>"** command is used to display the information about the pod.
+- **"kubectl delete deployment nginx-deployment"** command is used to delete the deployment with name 'nginx'.
 
 **ROLLING UPDATE :** creating new pods in new replica set slowly(used to upgrade the application seamlessly with zero downtime).
 - We don't mind on which node the pod is running on, it's k8s responsibility to handle the allocation of pod(s) to the node.
