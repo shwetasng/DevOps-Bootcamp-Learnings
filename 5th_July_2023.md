@@ -9,3 +9,8 @@
     - terraform plan
     - terraform apply
 - Terragrunt helps you to work with terraform configuration.
+- Consistency should always be meant in DEV and PROD environment.
+- Make use of Terraform Documentation to understand any concept. It has very descriptive and good documentation.
+- Terraform Output allows you to display outputs for someone else for example Jenkins.
+- What is .tfstate file?--->Basically how will terraform know app_server is information of some instance. it holds this information in .tfstate file. If you loose this file terraform is of no use. **.tfstate** file includes all your cloud means contains sensitive data hence don't commit and push this.
+- Check about Race Condition in OS.
