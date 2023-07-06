@@ -2,7 +2,9 @@
 
 - Terraform is used to monitor changes , earlier if some changes are made in AWS like changing instance type or any other thing it was not monitored but with terraform it is monitored and chances of making mistakes are reduced.
 - for eg. we want to make 15 same instance types in different regions it will be difficult to do this manually but with terraform it is done easily.
-- Terraform is a declarative tool.
+- Terraform is a declarative tool. Terraform files are written in a language called Hashicorp Configuration Language(HCL) and saved with '.tf' extension.
+- We define a provider in the terraform file that basically is a plugin that allows teraform to communicate wih the specific set of APIs.
+- Terraform supports a list of provider that you can check by visiting 'https://developer.hashicorp.com/terraform/language/providers'. Whichever provider is mentioned in the terraform file, terraform installs all the neccessary code to talk with the provider API(s).
 - Declarative tool vs Imperative tool
 - COMMANDS:
     - terraform init // done only once
