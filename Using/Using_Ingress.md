@@ -8,3 +8,7 @@
 - Then we went to Route53 service in aws which is a DNS service and there a URL is already made for us to use.
 <img width="960" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/74b56fd4-ada9-41fb-9472-2902d6a1c0b3">
 
+- we want to route our traffic to load balancer as shown in the picture. ref:https://aws.amazon.com/blogs/opensource/network-load-balancer-nginx-ingress-controller-eks/
+<img width="347" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/1731ca7c-6d22-42ba-a1e6-43f03361e09e">
+  
+
