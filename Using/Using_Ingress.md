@@ -31,6 +31,11 @@
 - on clicking the url in the ingress of openlens:
   <img width="960" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/a93a8c32-32c2-4a45-bf3d-36bf945899f2">
 
+- So the error came because of some mistake in yaml file. I made the changes in 14th line i.e., the name and then again kubectl apply...it was then configured and then refreshed the page of my ingress service.
+  <img width="742" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/16a47564-459a-43be-8d9b-71b48d99126b">
+  <img width="960" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/6d2c685b-c54f-4c39-92d1-483fc907d499">
+
+
 
 
 
