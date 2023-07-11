@@ -17,6 +17,11 @@
 - After this I created frontend-ingress.yaml file and put in the required code in it.
   <img width="638" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/60e22cbd-f448-4d92-a73d-e264d72d3c7d">
 
+- Then i deployed that file in K8S
+  
+  <img width="676" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/791134f3-83f3-47e7-ada2-9b9097d78ec3">
+
+
 
 
   
