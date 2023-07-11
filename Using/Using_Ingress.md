@@ -21,6 +21,18 @@
   
   <img width="676" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/791134f3-83f3-47e7-ada2-9b9097d78ec3">
 
+- Don't forget to change your namespace before applying kubectl apply otherwise ingress will be formed in default namespace.
+  
+<img width="665" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/0220f54c-b821-4f6d-b2f0-abc7e5b28110">
+
+- Now we check our OpenLens for to see the ingress created.
+  <img width="960" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/afcd3eac-94ed-4de6-b7b5-ca5c01edeb10">
+
+- on clicking the url in the ingress of openlens:
+  <img width="960" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/a93a8c32-32c2-4a45-bf3d-36bf945899f2">
+
+
+
 
 
 
