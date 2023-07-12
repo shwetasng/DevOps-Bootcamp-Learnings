@@ -7,7 +7,7 @@
   <img width="960" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/23d718a4-dfe5-4016-b50a-099b55f90260">
   <img width="617" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/5b1bda6d-c153-4f71-9622-087a0ef0de44">
 
-- then these commands will go into the Build.Jenkins file: refer [Build.Jenkinsfile](Using/Build.Jenkinsfile)
+- then these commands will go into the Build.Jenkins file: refer [Build.Jenkinsfile](Build.Jenkinsfile)
 
 ```text
   pipeline {
