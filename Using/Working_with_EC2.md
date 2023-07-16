@@ -80,6 +80,13 @@ int main()
 - Expected output:
 <img width="361" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/c330c09c-62ac-4a19-901c-e6b79655d5c5">
 
+- if multiple people are trying to send message on this server simultaneously then all messages will not come only one person can stay connected at one time.
+- this is on very small level but this is how linux server writes data on sockets and listen through sockets.
+- On running "netstat -tuna" we see all our current linux sockets and also the port our server is listening on.
+<img width="520" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/b64b4861-3353-4ff1-8c5b-ba2bbf643e72">
+
+
+
 
 
 
