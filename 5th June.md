@@ -19,6 +19,9 @@
 ## Discussions from Batch-1
 - Environment Variables
 - Networking
+- In this error we get permission error of 0664 which is security mechanism of ssh hence we will have to give permissions to our private key. use chmod 400 filename for providing only reading permissions by user.
+ <img width="362" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/4c9b0d17-980a-4250-a491-1defd700ca5b">
+
 
 
 
