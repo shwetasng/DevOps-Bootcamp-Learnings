@@ -17,6 +17,8 @@
 
 
 ## Discussions from Batch-1
+- Environment Variables
+- Networking
 
 
 
