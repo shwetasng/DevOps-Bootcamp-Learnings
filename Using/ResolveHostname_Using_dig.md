@@ -13,6 +13,10 @@
 4. From these authoritative servers we then ask for ip-address of stanford.edu
 <img width="362" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/efbdf00b-4447-48a1-806a-8be9cb644590">
 
+### NOTE
+if we resolve a hostname once and then resolve it again within some time it will be retireved in 0ms since it is stored in cache for some time.
+<img width="351" alt="image" src="https://github.com/shwetasng/DevOps-Bootcamp-Learnings/assets/103261868/e44a0ac6-5030-425e-80f7-cb0a716127a3">
+
 
 
 
